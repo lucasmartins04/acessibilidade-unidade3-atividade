@@ -171,23 +171,75 @@
 
     <h2>Fale com um vendedor</h2>
 
-    <div class="aviso">Os campos marcados com <span style="color:#c0392b">*</span> são obrigatórios.</div>
-
+    <p class="aviso">
+  Os campos marcados com <span aria-hidden="true">*</span> são obrigatórios.
+</p>
     <form action="/enviar" method="post">
 
-      <div style="font-weight:600; margin:14px 0 6px;">Nome completo *</div>
-      <input type="text" id="nome" placeholder="Digite seu nome completo">
+      <label for="nome">Nome completo *</label>
+<input
+  type="text"
+  id="nome"
+  name="nome"
+  placeholder="Digite seu nome completo"
+  required
+>"Digite seu nome completo">
 
-      <input type="email" id="email" placeholder="E-mail *">
-      <div class="erro">Erro.</div>
+      <label for="email">E-mail *</label>
+<input
+  type="email"
+  id="email"
+  name="email"
+  placeholder="Digite seu e-mail"
+  required
+  aria-describedby="erro-email"
+>
 
-      <label>Telefone</label>
-      <input type="text" id="telefone" placeholder="(00) 00000-0000">
+<div class="erro" id="erro-email">
+  Informe um endereço de e-mail válido, por exemplo: nome@exemplo.com.
+</div>
+      label for="telefone">Telefone</label>
+<input
+  type="text"
+  id="telefone"
+  name="telefone"
+  placeholder="(00) 00000-0000"
+>
+      <label for="senha">Senha *</label>
+<input
+  type="password"
+  id="senha"
+  name="senha"
+  placeholder="Crie uma senha"
+  required
+  aria-describedby="erro-senha"
+>
 
-      <input type="password" id="senha" placeholder="Crie uma senha">
-      <div class="erro">Erro.</div>
+<div class="erro" id="erro-senha">
+  Crie uma senha para continuar.
+</div>
 
-      <div style="font-weight:600; margin:14px 0 6px;">Turno preferido para contato *</div>
+      <legend>Turno preferido para contato *</legend>
+
+  <label>
+    <input type="radio" name="turno" id="manha" value="manha" required>
+    Manhã
+  </label>
+
+  <br>
+
+  <label>
+    <input type="radio" name="turno" id="tarde" value="tarde">
+    Tarde
+  </label>
+
+  <br>
+
+  <label>
+    <input type="radio" name="turno" id="noite" value="noite">
+    Noite
+  </label>
+</fieldset>
       <div>
         <input type="radio" name="turno" id="manha" value="manha"> Manhã<br>
         <input type="radio" name="turno" id="tarde" value="tarde"> Tarde<br>
