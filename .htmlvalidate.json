@@ -8,3 +8,5 @@
     "form-dup-name": ["error", { "shared": ["radio", "checkbox"] }]
   }
 }
+
+
